@@ -1,0 +1,21 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #a3ece0;
+}
+
+#projects {
+  background-color: #a3ece0;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+#navbarNav > ul > li > a:hover {
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.active:hover {
+  color: #000000 !important;
+}
