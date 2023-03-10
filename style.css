@@ -11,6 +11,10 @@ section {
   padding-top: 5rem;
 }
 
+.bawah {
+  padding-bottom: 5rem;
+}
+
 #navbarNav > ul > li > a:hover {
   color: #ffffff;
   transition: all 0.3s ease-in-out;
