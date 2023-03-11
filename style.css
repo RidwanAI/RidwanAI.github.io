@@ -23,3 +23,11 @@ section {
 .active:hover {
   color: #000000 !important;
 }
+
+.gallery-img {
+  width: 100%;
+}
+
+#gallery .row > * {
+  padding: 0;
+}

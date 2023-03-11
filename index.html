@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio || Muhammad Ridwan</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Link Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 
-    <!-- My CSS -->
+    <!-- Link AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Link My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="home">
@@ -35,6 +38,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -69,13 +75,13 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
             <p>
               Hii.. let's me allow to introduce my self. My name is Muhammad Ridwan and now I'm a Collage Student in Gunadarma University and is currently completing a bachelor of informatics engineering. I am also a programmer working in
               the field of web development.
             </p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <p>The projects that I have made include E-Commerce website that were made using the Go language as routing and various other configurations. Besides that, I also made this web portfolio using HTML, Bootstrap, and CSS.</p>
           </div>
         </div>
@@ -99,7 +105,7 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-duration="500">
             <div class="card">
               <img src="img/projects/project1.png" class="card-img-top" alt="project 1" />
               <div class="card-body">
@@ -108,7 +114,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-duration="500" data-aos-delay="300">
             <div class="card">
               <img src="img/projects/project2.png" class="card-img-top" alt="project 2" />
               <div class="card-body">
@@ -128,6 +134,84 @@
       </svg>
     </section>
     <!-- Akhir Projects -->
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="container bawah">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Best Gallery</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G1.png" alt="Gambar Gallery 1" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G2.png" alt="Gambar Gallery 2" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G3.png" alt="Gambar Gallery 3" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G4.png" alt="Gambar Gallery 4" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G5.png" alt="Gambar Gallery 5" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G6.png" alt="Gambar Gallery 6" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G7.png" alt="Gambar Gallery 7" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G8.png" alt="Gambar Gallery 8" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G9.png" alt="Gambar Gallery 9" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G10.png" alt="Gambar Gallery 10" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G11.png" alt="Gambar Gallery 11" class="img-fluid gallery-img" />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/gallery/G12.png" alt="Gambar Gallery 12" class="img-fluid gallery-img" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Gallery -->
+
+    <!-- Catch Me -->
+
+    <!-- Akhir CAthch Me -->
 
     <!-- Contact -->
     <section id="contact">
@@ -224,8 +308,24 @@
     </footer>
     <!-- Akhir Footer -->
 
+    <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galleryImage = document.querySelectorAll('.gallery-img');
+
+      galleryImage.forEach((img, i) => {
+        img.dataset.aos = 'fade-down';
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init();
+    </script>
+
+    <!-- Script Form -->
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycby8gq-7ZvXlLUowba4WdY8gj10nSEf5YhfrpN-KX1HCB-xg2wEZFpBrGcduTtXcGcGs/exec';
       const form = document.forms['portfolio-contact-form'];
