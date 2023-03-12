@@ -7,6 +7,10 @@
   background-color: #a3ece0;
 }
 
+#catch {
+  background-color: #a3ece0;
+}
+
 section {
   padding-top: 5rem;
 }
@@ -30,4 +34,9 @@ section {
 
 #gallery .row > * {
   padding: 0;
+}
+
+.sosmed:hover {
+  color: #ffffff;
+  transition: all ease-in-out;
 }
