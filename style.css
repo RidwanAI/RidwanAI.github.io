@@ -36,7 +36,33 @@ section {
   padding: 0;
 }
 
+.sosmed {
+  text-decoration: none;
+  color: #000000;
+}
+
 .sosmed:hover {
   color: #ffffff;
-  transition: all ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card {
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.12);
+}
+
+.card img {
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.1);
 }
