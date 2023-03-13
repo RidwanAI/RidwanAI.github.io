@@ -47,14 +47,7 @@ section {
 }
 
 .card {
-  transition-property: all;
-  transition-duration: 0.6s;
-  transition-timing-function: ease-in-out;
   overflow: hidden;
-}
-
-.card:hover {
-  transform: scale(1.12);
 }
 
 .card img {
