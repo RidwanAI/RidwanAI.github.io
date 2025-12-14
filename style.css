@@ -59,3 +59,36 @@ section {
 .card img:hover {
   transform: scale(1.1);
 }
+
+.certificate-box {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.certificate-box:hover {
+  transform: translateY(-10px);
+  background: #0acbaa;
+  color: #fff;
+}
+
+.cert-icon {
+  font-size: 40px;
+  color: #0acbaa;
+  margin-bottom: 10px;
+}
+
+.certificate-box:hover .cert-icon {
+  color: #fff;
+}
+
+.certificate-box h6 {
+  font-weight: 600;
+  font-size: 14px;
+}
+

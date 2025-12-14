@@ -12,6 +12,10 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Link AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -19,6 +23,24 @@
     <!-- Link My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
+  <div class="modal fade" id="certModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="certTitle"></h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <iframe id="certFrame" width="100%" height="600"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <body id="home">
     <!-- Navbar -->
@@ -69,7 +91,9 @@
               <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="#certificate"
+                >Certificates & Training</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#catch">Catch Me</a>
@@ -349,159 +373,17 @@
     </section>
     <!-- Akhir Projects -->
 
-    <!-- Gallery -->
-    <section id="gallery">
+    <!-- Certificates -->
+    <section id="certificate">
       <div class="container bawah">
-        <div class="row text-center mb-3">
+        <div class="row text-center mb-4">
           <div class="col">
-            <h2>Best Gallery</h2>
+            <h2>Certificates & Training</h2>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Xqj93TB2pA5HTpUuRK5mVDX9g9d-RApu/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G1.png"
-                alt="Gambar Gallery 1"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XmJuQMkJ_-JYyI3m-PbKsKf7Vj-FdvJ9/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G2.png"
-                alt="Gambar Gallery 2"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XdDOVFwnhoiCI-aFh8EX2zRLTKpy-9yp/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G3.png"
-                alt="Gambar Gallery 3"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Xx1Fuo4OHPQIcqANNp5QUnVv3uUfvxWn/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G4.png"
-                alt="Gambar Gallery 4"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Y60LE8It906-XnKxw3bnv8cQ-Z8QPk3S/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G5.png"
-                alt="Gambar Gallery 5"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Y7UIeTADrFcjlNBFlNPnstc8wHnsEXOt/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G6.png"
-                alt="Gambar Gallery 6"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XbK76N9vsaTmIsvs1U-wxfTPk1euESpF/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G7.png"
-                alt="Gambar Gallery 7"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XZb03S5p25Y2oXVhin5mRidbzQA6ytPS/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G8.png"
-                alt="Gambar Gallery 8"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Y0W4UxX6vFgUhZIb_pY3ECsJkWRNCtAb/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G9.png"
-                alt="Gambar Gallery 9"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XR1Z_J76A-Xv6du29wDFPBQ9wMApp0tQ/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G10.png"
-                alt="Gambar Gallery 10"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1XrqBcYlRSwruGQweKv9WxHBDnZSyYtlN/view?usp=sharing"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G11.png"
-                alt="Gambar Gallery 11"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a
-              href="https://drive.google.com/file/d/1Y4W6UK00P_JvmtJVPg3VbyW3rc_fdN53/view?usp=share_link"
-              target="_blank"
-            >
-              <img
-                src="img/gallery/G12.png"
-                alt="Gambar Gallery 12"
-                class="img-fluid gallery-img"
-              />
-            </a>
-          </div>
+
+        <div class="row justify-content-center g-4" id="certificateList">
+          <!-- Auto generated -->
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -512,7 +394,7 @@
         ></path>
       </svg>
     </section>
-    <!-- Akhir Gallery -->
+    <!-- End Certificates -->
 
     <!-- Catch -->
     <section id="catch">
@@ -817,24 +699,59 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Script Auto Generate -->
+    <script>
+      const API_URL =
+        "https://script.google.com/macros/s/AKfycbzHUJzu5VKKGDHbIcT5AOyEOfc9xozuoh6QoJb-jM2CvnMfdse3EyldHn3LEQVKNHSD/exec";
+      const container = document.getElementById("certificateList");
+
+      fetch(API_URL)
+        .then((res) => res.json())
+        .then((data) => {
+          data.forEach((cert, i) => {
+            const col = document.createElement("div");
+            col.className = "col-md-3";
+
+            col.innerHTML = `
+        <div class="certificate-box"
+          data-aos="fade-up"
+          data-aos-delay="${i * 150}"
+          onclick="openCert('${cert.name}', '${cert.url}')"
+        >
+          <div class="cert-icon">
+            <i class="bi bi-award-fill"></i>
+          </div>
+          <h6>${cert.name}</h6>
+          <p>Click to view</p>
+        </div>
+      `;
+
+            container.appendChild(col);
+          });
+
+          AOS.refresh();
+        });
+
+      function openCert(title, url) {
+        document.getElementById("certTitle").innerText = title;
+        document.getElementById("certFrame").src = url;
+        new bootstrap.Modal(document.getElementById("certModal")).show();
+      }
+    </script>
+
     <!-- Script AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      const galleryImage = document.querySelectorAll(".gallery-img");
       const sosialMedia = document.querySelectorAll(".par-sosmed");
-
-      galleryImage.forEach((img, i) => {
-        img.dataset.aos = "fade-down";
-        img.dataset.aosDelay = i * 150;
-        img.dataset.aosDuration = 1000;
-      });
 
       sosialMedia.forEach((p, j) => {
         p.dataset.aos = "fade-down";
         p.dataset.aosDelay = j * 300;
         p.dataset.aosDuration = 1000;
       });
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
     </script>
 
     <!-- Script GSAP -->
