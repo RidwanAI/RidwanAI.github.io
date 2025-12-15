@@ -1,0 +1,32 @@
+[
+  {
+    "title": "E-Commerce Website — OneToCart",
+    "description": "OneToCart is a web-based e-commerce application designed to support online product sales and management. The platform allows users to browse products, view detailed product information, and manage product data in an organized and scalable system. The backend of this project is built using Golang, which handles routing and core application configurations, while PostgreSQL is used as the primary database. The application is designed with scalability in mind and is currently under further development to add more features and improve overall functionality.",
+    "tech": "Golang, PostgreSQL, HTML, CSS, Bootstrap",
+    "image": "img/projects/project1.webp"
+  },
+  {
+    "title": "Portfolio Website — Personal Portfolio",
+    "description": "This personal portfolio website was developed as a digital platform to showcase my profile, skills, experience, and projects. The main goal of this website is to present my background and technical abilities in a clean, simple, and professional manner. The website is built using HTML, CSS, and Bootstrap, ensuring a responsive and user-friendly interface across different devices. It also includes a contact feature that allows visitors to reach out to me directly through the website.",
+    "tech": "HTML, CSS, Bootstrap",
+    "image": "img/projects/project2.webp"
+  },
+  {
+    "title": "Warehouse Management System",
+    "description": "The Warehouse Management System is a web application developedto digitally manage and monitor product stock data efficiently. This system helps streamline warehouse operations by providing structured and centralized data management. The backend is implemented using Golang to handle routing and business logic, while MySQL is used as the database. Key features include user authentication (login & register), CRUD operations for product data, Excel data import, and data statistics to support stock analysis and reporting.",
+    "tech": "Golang, MySQL, HTML, CSS, Bootstrap",
+    "image": "img/projects/project3.webp"
+  },
+  {
+    "title": "Check Plagiarism App",
+    "description": "Check Plagiarism Application is a desktop-based plagiarism detection system developed as an undergraduate thesis project. The application analyzes semantic similarity across multiple document formats, including text-based files and images using OCR. Users can upload documents, configure detection parameters, and perform plagiarism checks with risk-level classification and detailed similarity analysis through an interactive interface.",
+    "tech": "Python, PyTorch, Sentence Transformers, Transformer-based OCR (TrOCR), NLP, Tkinter",
+    "image": "img/projects/project4.webp"
+  },
+  {
+    "title": "E-Commerce Website — Benerin Motor",
+    "description": "Benerin Motor is an e-commerce website developed for a motorcycle spare parts business and completed as a final course assignment. The website enables online product browsing and transactions to simplify the client's buying and selling process. The project was developed collaboratively, with my primary role focused on backend development, including API implementation, business logic, and database integration to support core e-commerce features.",
+    "tech": "React, Express.js, MySQL",
+    "image": "img/projects/project5.webp"
+  }
+]
