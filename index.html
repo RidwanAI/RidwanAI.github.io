@@ -720,37 +720,52 @@
 
     <!-- Script Auto Generate Project -->
     <script>
-      fetch("projects.json")
-        .then((res) => res.json())
-        .then((projects) => {
-          const container = document.getElementById("projectList");
+      const PROJECT_JSON = "projects.json"; // file local
+      const IMAGE_API =
+        "https://script.google.com/macros/s/AKfycbyklvGuH1OJ6vnvxyIxOPSDptwdw9GLTdBsuUoldueUkMG9Iu0EyPuoyTStYWOXYHyLXA/exec";
 
-          projects.forEach((p, i) => {
-            const col = document.createElement("div");
-            col.className = "col-md-4 mb-4";
+      const contain = document.getElementById("projectList");
 
-            col.innerHTML = `
-        <div class="card project-card h-100" onclick="openProject(${i})">
-          <img src="${p.image}" class="card-img-top" loading="lazy" />
-          <div class="card-body">
-            <h6 class="fw-bold">${p.title}</h6>
-          </div>
+      Promise.all([
+        fetch(PROJECT_JSON).then((res) => res.json()),
+        fetch(IMAGE_API).then((res) => res.json()),
+      ]).then(([projects, images]) => {
+        projects.forEach((p, i) => {
+          const imgUrl = images[p.imageKey] || "";
+
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-3";
+
+          col.innerHTML = `
+      <div class="card project-card"
+        onclick="openProject(
+          '${p.title}',
+          '${p.description}',
+          '${p.tech}',
+          '${imgUrl}'
+        )"
+      >
+        <img src="${imgUrl}" class="card-img-top" alt="${p.title}">
+        <div class="card-body">
+          <h6 class="fw-bold">${p.title}</h6>
+          <button class="btn btn-outline-primary btn-sm">
+            View Detail
+          </button>
         </div>
-      `;
+      </div>
+    `;
 
-            container.appendChild(col);
-          });
-
-          window.projectData = projects;
+          contain.appendChild(col);
         });
 
-      function openProject(index) {
-        const p = window.projectData[index];
+        AOS.refresh();
+      });
 
-        document.getElementById("modalTitle").innerText = p.title;
-        document.getElementById("modalDesc").innerText = p.description;
-        document.getElementById("modalTech").innerText = p.tech;
-        document.getElementById("modalImage").src = p.image;
+      function openProject(title, desc, tech, image) {
+        document.getElementById("projectTitle").innerText = title;
+        document.getElementById("projectDesc").innerText = desc;
+        document.getElementById("projectTech").innerText = tech;
+        document.getElementById("projectImage").src = image;
 
         new bootstrap.Modal(document.getElementById("projectModal")).show();
       }
