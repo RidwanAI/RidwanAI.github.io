@@ -720,55 +720,59 @@
 
     <!-- Script Auto Generate Project -->
     <script>
-      const PROJECT_JSON = "projects.json"; // file local
+      const PROJECT_JSON = "projects.json";
       const IMAGE_API =
         "https://script.google.com/macros/s/AKfycbyklvGuH1OJ6vnvxyIxOPSDptwdw9GLTdBsuUoldueUkMG9Iu0EyPuoyTStYWOXYHyLXA/exec";
 
       const contain = document.getElementById("projectList");
 
-      Promise.all([
-        fetch(PROJECT_JSON).then((res) => res.json()),
-        fetch(IMAGE_API).then((res) => res.json()),
-      ]).then(([projects, images]) => {
-        projects.forEach((p, i) => {
-          const imgUrl = images[p.imageKey] || "";
+      Promise.all([fetch(PROJECT_JSON), fetch(IMAGE_API)])
+        .then(async ([pRes, iRes]) => {
+          console.log("projects.json status:", pRes.status);
+          console.log("image api status:", iRes.status);
 
-          const col = document.createElement("div");
-          col.className = "col-md-4 mb-3";
+          const projects = await pRes.json();
+          const images = await iRes.json();
 
-          col.innerHTML = `
+          console.log("PROJECT DATA:", projects);
+          console.log("IMAGE DATA:", images);
+
+          if (!projects.length) {
+            container.innerHTML = "<p class='text-center'>No project data</p>";
+            return;
+          }
+
+          projects.forEach((p) => {
+            const imgUrl = images[p.imageKey];
+
+            const col = document.createElement("div");
+            col.className = "col-md-4 mb-3";
+
+            col.innerHTML = `
       <div class="card project-card"
         onclick="openProject(
           '${p.title}',
           '${p.description}',
           '${p.tech}',
-          '${imgUrl}'
+          '${imgUrl || ""}'
         )"
       >
-        <img src="${imgUrl}" class="card-img-top" alt="${p.title}">
+        <img src="${imgUrl || ""}" class="card-img-top">
         <div class="card-body">
           <h6 class="fw-bold">${p.title}</h6>
-          <button class="btn btn-outline-primary btn-sm">
-            View Detail
-          </button>
+          <button class="btn btn-outline-primary btn-sm">View Detail</button>
         </div>
       </div>
     `;
 
-          contain.appendChild(col);
+            contain.appendChild(col);
+          });
+        })
+        .catch((err) => {
+          console.error("FETCH ERROR:", err);
+          contain.innerHTML =
+            "<p class='text-center text-danger'>Failed to load projects</p>";
         });
-
-        AOS.refresh();
-      });
-
-      function openProject(title, desc, tech, image) {
-        document.getElementById("projectTitle").innerText = title;
-        document.getElementById("projectDesc").innerText = desc;
-        document.getElementById("projectTech").innerText = tech;
-        document.getElementById("projectImage").src = image;
-
-        new bootstrap.Modal(document.getElementById("projectModal")).show();
-      }
     </script>
 
     <!-- Script Auto Generate Sertifikat -->
