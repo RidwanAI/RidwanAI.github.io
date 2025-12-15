@@ -202,191 +202,7 @@
             <h2>My Projects</h2>
           </div>
         </div>
-        <div
-          class="row justify-content-center"
-          id="projectList"
-          data-aos="flip-right"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <!-- <div
-            class="col-md-4 mb-3"
-            data-aos="flip-right"
-            data-aos-duration="500"
-          >
-            <div class="card">
-              <img
-                src="img/projects/project1.png"
-                class="card-img-top"
-                alt="project 1"
-              />
-              <div class="card-body">
-                <p class="card-text fs-5">
-                  <b>E-Commerce Website — OneToCart</b>
-                </p>
-                <p class="card-text">
-                  OneToCart is a web-based e-commerce application designed to
-                  support online product sales and management. The platform
-                  allows users to browse products, view detailed product
-                  information, and manage product data in an organized and
-                  scalable system. <br /><br />
-
-                  The backend of this project is built using Golang, which
-                  handles routing and core application configurations, while
-                  PostgreSQL is used as the primary database. The application is
-                  designed with scalability in mind and is currently under
-                  further development to add more features and improve overall
-                  functionality. <br /><br />
-
-                  Tech Stack: <br />
-                  Golang, PostgreSQL, HTML, CSS, Bootstrap
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-4 mb-3"
-            data-aos="flip-right"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <div class="card">
-              <img
-                src="img/projects/project2.png"
-                class="card-img-top"
-                alt="project 2"
-              />
-              <div class="card-body">
-                <p class="card-text fs-5">
-                  <b>Portfolio Website — Personal Portfolio</b>
-                </p>
-                <p class="card-text">
-                  This personal portfolio website was developed as a digital
-                  platform to showcase my profile, skills, experience, and
-                  projects. The main goal of this website is to present my
-                  background and technical abilities in a clean, simple, and
-                  professional manner. <br /><br />
-
-                  The website is built using HTML, CSS, and Bootstrap, ensuring
-                  a responsive and user-friendly interface across different
-                  devices. It also includes a contact feature that allows
-                  visitors to reach out to me directly through the website.
-                  <br />
-                  <br />
-
-                  Tech Stack: <br />
-                  HTML, CSS, Bootstrap
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-4 mb-3"
-            data-aos="flip-right"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <div class="card">
-              <img
-                src="img/projects/project3.png"
-                class="card-img-top"
-                alt="project 3"
-              />
-              <div class="card-body">
-                <p class="card-text fs-5">
-                  <b>Warehouse Management System</b>
-                </p>
-                <p class="card-text">
-                  The Warehouse Management System is a web application developed
-                  to digitally manage and monitor product stock data
-                  efficiently. This system helps streamline warehouse operations
-                  by providing structured and centralized data management.
-                  <br />
-                  <br />
-
-                  The backend is implemented using Golang to handle routing and
-                  business logic, while MySQL is used as the database. Key
-                  features include user authentication (login & register), CRUD
-                  operations for product data, Excel data import, and data
-                  statistics to support stock analysis and reporting. <br />
-                  <br />
-
-                  Tech Stack: <br />
-                  Golang, MySQL, HTML, CSS, Bootstrap
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-4 mb-3"
-            data-aos="flip-right"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <div class="card">
-              <img
-                src="img/projects/project4.png"
-                class="card-img-top"
-                alt="project 4"
-              />
-              <div class="card-body">
-                <p class="card-text fs-5"><b>Check Plagiarism App</b></p>
-                <p class="card-text">
-                  Check Plagiarism Application is a desktop-based plagiarism
-                  detection system developed as an undergraduate thesis project.
-                  The application analyzes semantic similarity across multiple
-                  document formats, including text-based files and images using
-                  OCR. <br /><br />
-
-                  Users can upload documents, configure detection parameters,
-                  and perform plagiarism checks with risk-level classification
-                  and detailed similarity analysis through an interactive
-                  interface.
-                  <br /><br />
-
-                  Tech Stack: <br />
-                  Python, PyTorch, Sentence Transformers, Transformer-based OCR
-                  (TrOCR), NLP, Tkinter
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-4 mb-3"
-            data-aos="flip-right"
-            data-aos-duration="500"
-            data-aos-delay="200"
-          >
-            <div class="card">
-              <img
-                src="img/projects/project5.png"
-                class="card-img-top"
-                alt="project 5"
-              />
-              <div class="card-body">
-                <p class="card-text fs-5">
-                  <b>E-Commerce Website — Benerin Motor</b>
-                </p>
-                <p class="card-text">
-                  Benerin Motor is an e-commerce website developed for a
-                  motorcycle spare parts business and completed as a final
-                  course assignment. The website enables online product browsing
-                  and transactions to simplify the client's buying and selling
-                  process. <br /><br />
-
-                  The project was developed collaboratively, with my primary
-                  role focused on backend development, including API
-                  implementation, business logic, and database integration to
-                  support core e-commerce features.
-                  <br /><br />
-
-                  Tech Stack: <br />
-                  React, Express.js, MySQL
-                </p>
-              </div>
-            </div>
-          </div> -->
-        </div>
+        <div class="row justify-content-center" id="projectList"></div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
@@ -735,20 +551,28 @@
             const col = document.createElement("div");
             col.className = "col-md-4 mb-4";
 
+            // Tambahkan atribut AOS dengan delay incremental
+            col.setAttribute("data-aos", "flip-right");
+            col.setAttribute("data-aos-duration", "500");
+            col.setAttribute("data-aos-delay", `${i * 200}`); // Delay bertambah 200ms per item
+
             col.innerHTML = `
-              <div class="card project-card h-100" onclick="openProject(${i})">
-                <img src="${p.image}" class="card-img-top" loading="lazy" />
-                <div class="card-body">
-                  <h6 class="fw-bold">${p.title}</h6>
-                  <button class="btn btn-primary btn-sm bp">View Detail</button>
-                </div>
-              </div>
-            `;
+          <div class="card project-card h-100" onclick="openProject(${i})">
+            <img src="${p.image}" class="card-img-top" loading="lazy" />
+            <div class="card-body">
+              <h6 class="fw-bold">${p.title}</h6>
+              <button class="btn btn-primary btn-sm bp">View Detail</button>
+            </div>
+          </div>
+        `;
 
             container.appendChild(col);
           });
 
           window.projectData = projects;
+
+          // Refresh AOS setelah elemen ditambahkan
+          AOS.refresh();
         });
 
       function openProject(index) {
