@@ -99,3 +99,7 @@ section {
 .project-card button {
   pointer-events: none;
 }
+
+.bp:hover {
+  color: #fff;
+}
