@@ -25,7 +25,7 @@
   </head>
 
   <!-- Modal Project -->
-  <div class="modal fade" id="projectListExtra" tabindex="-1">
+  <div class="modal fade" id="projectModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -542,44 +542,55 @@
 
     <!-- Script Auto Generate Project -->
     <script>
-      // Fungsi untuk memproses data dan menampilkannya
-      function renderProjects(url, containerId, isExtra = false) {
-        const container = document.getElementById(containerId);
+      let projectListData = [];
+      let projectExtraData = [];
 
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => {
-            data.forEach((p, i) => {
-              const col = document.createElement("div");
-              col.className = "col-md-4 mb-4";
-              col.setAttribute("data-aos", "fade-up");
-              col.setAttribute("data-aos-delay", `${i * 100}`);
+      // Ambil dua JSON sekaligus
+      Promise.all([
+        fetch("projects.json").then((res) => res.json()),
+        fetch("project-extra.json").then((res) => res.json()),
+      ]).then(([projects, extras]) => {
+        projectListData = projects;
+        projectExtraData = extras;
 
-              col.innerHTML = `
-            <div class="card h-100" onclick="openProject('${p.title}', '${p.description}', '${p.tech}', '${p.image}')" style="cursor:pointer;">
-              <img src="${p.image}" class="card-img-top" alt="${p.title}">
-              <div class="card-body">
-                <h6 class="fw-bold">${p.title}</h6>
-                <button class="btn btn-primary btn-sm">View Detail</button>
-              </div>
-            </div>
-          `;
-              container.appendChild(col);
-            });
-          })
-          .catch((err) => console.error("Error loading " + url, err));
-      }
+        const container = document.getElementById("projectList");
 
-      // Panggil kedua file tersebut
-      renderProjects("projects.json", "projectList");
-      renderProjects("projects-extra.json", "projectListExtra");
+        projects.forEach((p, i) => {
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-4";
 
-      // Fungsi Modal yang disederhanakan agar bisa dipakai kedua source
-      function openProject(title, desc, tech, img) {
-        document.getElementById("modalTitle").innerText = title;
-        document.getElementById("modalDesc").innerText = desc;
-        document.getElementById("modalTech").innerText = tech;
-        document.getElementById("modalImage").src = img;
+          col.setAttribute("data-aos", "flip-right");
+          col.setAttribute("data-aos-duration", "500");
+          col.setAttribute("data-aos-delay", `${i * 200}`);
+
+          col.innerHTML = `
+        <div class="card project-card h-100" onclick="openProject(${p.id})">
+          <img src="${p.image}" class="card-img-top" loading="lazy" />
+          <div class="card-body">
+            <h6 class="fw-bold">${p.title}</h6>
+            <button class="btn btn-primary btn-sm bp">View Detail</button>
+          </div>
+        </div>
+      `;
+
+          container.appendChild(col);
+        });
+
+        AOS.refresh();
+      });
+
+      function openProject(id) {
+        const detail = projectExtraData.find((p) => p.id === id);
+
+        if (!detail) return;
+
+        document.getElementById("modalTitle").innerText = projectListData.find(
+          (p) => p.id === id,
+        ).title;
+
+        document.getElementById("modalDesc").innerText = detail.description;
+        document.getElementById("modalTech").innerText = detail.tech;
+        document.getElementById("modalImage").src = detail.image;
 
         new bootstrap.Modal(document.getElementById("projectModal")).show();
       }
