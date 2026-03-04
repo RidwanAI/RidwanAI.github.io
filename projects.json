@@ -28,5 +28,11 @@
     "description": "Benerin Motor is an e-commerce website developed for a motorcycle spare parts business and completed as a final course assignment. The website enables online product browsing and transactions to simplify the client's buying and selling process. The project was developed collaboratively, with my primary role focused on backend development, including API implementation, business logic, and database integration to support core e-commerce features.",
     "tech": "React, Express.js, MySQL",
     "image": "img/projects/project5.webp"
+  },
+  {
+    "title": "Cashier Management System App",
+    "description": "Cashier Management System App is a powerful desktop-based Point of Sale (POS) application developed in Java. It's designed to simplify retail operations, particularly for small to medium-sized businesses, by digitizing payment processing, managing product inventory, and generating automated transaction reports.",
+    "tech": "Java, MVC, Java Swing, iReport, MySQL",
+    "image": "img/projects/project6.webp"
   }
 ]
