@@ -545,7 +545,6 @@
       fetch("projects.json")
         .then((res) => res.json())
         .then((projects) => {
-          const container = document.getElementById("projectList");
 
           projects.forEach((p, i) => {
             const col = document.createElement("div");
