@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -542,45 +542,44 @@
 
     <!-- Script Auto Generate Project -->
     <script>
-      fetch("projects.json")
-        .then((res) => res.json())
-        .then((projects) => {
+      // Fungsi untuk memproses data dan menampilkannya
+      function renderProjects(url, containerId, isExtra = false) {
+        const container = document.getElementById(containerId);
 
-          projects.forEach((p, i) => {
-            const col = document.createElement("div");
-            col.className = "col-md-4 mb-4";
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            data.forEach((p, i) => {
+              const col = document.createElement("div");
+              col.className = "col-md-4 mb-4";
+              col.setAttribute("data-aos", "fade-up");
+              col.setAttribute("data-aos-delay", `${i * 100}`);
 
-            // Tambahkan atribut AOS dengan delay incremental
-            col.setAttribute("data-aos", "flip-right");
-            col.setAttribute("data-aos-duration", "500");
-            col.setAttribute("data-aos-delay", `${i * 200}`); // Delay bertambah 200ms per item
-
-            col.innerHTML = `
-          <div class="card project-card h-100" onclick="openProject(${i})">
-            <img src="${p.image}" class="card-img-top" loading="lazy" />
-            <div class="card-body">
-              <h6 class="fw-bold">${p.title}</h6>
-              <button class="btn btn-primary btn-sm bp">View Detail</button>
+              col.innerHTML = `
+            <div class="card h-100" onclick="openProject('${p.title}', '${p.description}', '${p.tech}', '${p.image}')" style="cursor:pointer;">
+              <img src="${p.image}" class="card-img-top" alt="${p.title}">
+              <div class="card-body">
+                <h6 class="fw-bold">${p.title}</h6>
+                <button class="btn btn-primary btn-sm">View Detail</button>
+              </div>
             </div>
-          </div>
-        `;
+          `;
+              container.appendChild(col);
+            });
+          })
+          .catch((err) => console.error("Error loading " + url, err));
+      }
 
-            container.appendChild(col);
-          });
+      // Panggil kedua file tersebut
+      renderProjects("projects.json", "projectList");
+      renderProjects("projects-extra.json", "projectListExtra");
 
-          window.projectData = projects;
-
-          // Refresh AOS setelah elemen ditambahkan
-          AOS.refresh();
-        });
-
-      function openProject(index) {
-        const p = window.projectData[index];
-
-        document.getElementById("modalTitle").innerText = p.title;
-        document.getElementById("modalDesc").innerText = p.description;
-        document.getElementById("modalTech").innerText = p.tech;
-        document.getElementById("modalImage").src = p.image;
+      // Fungsi Modal yang disederhanakan agar bisa dipakai kedua source
+      function openProject(title, desc, tech, img) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDesc").innerText = desc;
+        document.getElementById("modalTech").innerText = tech;
+        document.getElementById("modalImage").src = img;
 
         new bootstrap.Modal(document.getElementById("projectModal")).show();
       }
