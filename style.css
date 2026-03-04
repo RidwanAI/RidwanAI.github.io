@@ -118,3 +118,31 @@ section {
   object-fit: contain;
   background-color: #f8f9fa;
 }
+
+/* Tombol wrapper */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+}
+
+/* Tombol lingkaran putih */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: white;
+  background-size: 60%;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) brightness(0);
+}
