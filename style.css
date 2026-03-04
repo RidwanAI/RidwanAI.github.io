@@ -128,11 +128,11 @@ section {
 /* Tombol lingkaran putih */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: white;
+  background-color: black;
   background-size: 60%;
   border-radius: 50%;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgb(255, 253, 253);
 }
 
 /* Hover effect */
