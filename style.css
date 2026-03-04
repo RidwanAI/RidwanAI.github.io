@@ -112,9 +112,3 @@ section {
   width: 100%;
   border-radius: 8px;
 }
-
-.carousel-item img {
-  max-height: 500px;
-  object-fit: contain;
-  background-color: #f8f9fa;
-}

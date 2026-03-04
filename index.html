@@ -33,37 +33,9 @@
           <button class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <!-- Carousel -->
-          <div
-            id="projectCarousel"
-            class="carousel slide mb-4"
-            data-bs-ride="false"
-          >
-            <div class="carousel-inner" id="carouselInner">
-              <!-- Auto generate images -->
-            </div>
-
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#projectCarousel"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#projectCarousel"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
-
+          <img id="modalImage" class="img-fluid rounded mb-3" />
           <p id="modalDesc"></p>
-          <strong>Tech Stack:</strong>
+          <strong>Tech Stack:</strong><br />
           <p id="modalTech"></p>
         </div>
       </div>
@@ -609,27 +581,16 @@
 
       function openProject(id) {
         const detail = projectExtraData.find((p) => p.id === id);
+
         if (!detail) return;
 
-        const titleData = projectListData.find((p) => p.id === id);
+        document.getElementById("modalTitle").innerText = projectListData.find(
+          (p) => p.id === id,
+        ).title;
 
-        document.getElementById("modalTitle").innerText = titleData.title;
         document.getElementById("modalDesc").innerText = detail.description;
         document.getElementById("modalTech").innerText = detail.tech;
-
-        const carouselInner = document.getElementById("carouselInner");
-        carouselInner.innerHTML = "";
-
-        detail.images.forEach((img, index) => {
-          const item = document.createElement("div");
-          item.className = "carousel-item" + (index === 0 ? " active" : "");
-
-          item.innerHTML = `
-      <img src="${img}" class="d-block w-100 rounded shadow" />
-    `;
-
-          carouselInner.appendChild(item);
-        });
+        document.getElementById("modalImage").src = detail.image;
 
         new bootstrap.Modal(document.getElementById("projectModal")).show();
       }
