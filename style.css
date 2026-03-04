@@ -103,3 +103,19 @@ section {
 .bp:hover {
   color: #fff;
 }
+
+.custom-modal .modal-content {
+  border-radius: 12px;
+}
+
+.custom-modal .modal-body {
+  text-align: center;
+  padding: 2rem;
+}
+
+.custom-modal img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
