@@ -44,6 +44,7 @@
             </div>
 
             <button
+              id="prevBtn"
               class="carousel-control-prev"
               type="button"
               data-bs-target="#projectCarousel"
@@ -53,6 +54,7 @@
             </button>
 
             <button
+              id="nextBtn"
               class="carousel-control-next"
               type="button"
               data-bs-target="#projectCarousel"
@@ -630,6 +632,18 @@
 
           carouselInner.appendChild(item);
         });
+
+        // Logic show/hide tombol
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        if (detail.images.length <= 1) {
+          prevBtn.style.display = "none";
+          nextBtn.style.display = "none";
+        } else {
+          prevBtn.style.display = "flex";
+          nextBtn.style.display = "flex";
+        }
 
         new bootstrap.Modal(document.getElementById("projectModal")).show();
       }
