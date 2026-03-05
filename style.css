@@ -75,6 +75,7 @@ section {
   transform: translateY(-10px);
   background: #0acbaa;
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .cert-icon {
@@ -132,9 +133,9 @@ section {
   border-radius: 50%;
   padding: 22px;
   background-size: 50%;
-  box-shadow: 
-    0 4px 10px rgba(0,0,0,0.4),
-    0 0 0 4px rgba(0,0,0,0.15); /* outer ring */
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 0 0 4px rgba(0, 0, 0, 0.15); /* outer ring */
 }
 
 /* Panah hitam tebal */
@@ -150,5 +151,14 @@ section {
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
   transform: scale(1.1);
-  transition: 0.2s ease;
+  transition: 0.3s ease;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
