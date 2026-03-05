@@ -38,5 +38,19 @@
       "img/projects/project6.2.webp",
       "img/projects/project6.3.webp"
     ]
+  },
+  {
+    "id": 7,
+    "description": "Contract Monitoring System is an administrative tool designed to track and monitor employee contract durations. It features a color-coded notification system—Red for contracts expiring within 15 days and Yellow for 15–30 days—to ensure timely HR actions. The system also includes advanced search capabilities to filter employees by their remaining contract tenure.",
+    "tech": "HTML, Java (Sping Boot), MySQL",
+    "images": [
+      "img/projects/project7.webp",
+      "img/projects/project7.1.webp",
+      "img/projects/project7.2.webp",
+      "img/projects/project7.3.webp",
+      "img/projects/project7.4.webp",
+      "img/projects/project7.5.webp",
+      "img/projects/project7.6.webp"
+    ]
   }
 ]
